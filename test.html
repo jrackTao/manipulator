@@ -1,0 +1,59 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+  <title></title>
+
+  <script type="text/javascript">
+    var draggable = false;
+    var offsetX = 0;
+    var offsetY = 0;
+
+    window.onload = function () {
+      var div01 = document.getElementById("div01");
+
+      div01.style.position = "absolute";
+
+      div01.onmousedown = function () {
+        draggable = true;
+        offsetY = event.clientY - div01.offsetTop;
+        offsetX = event.clientX - div01.offsetLeft;
+      }
+
+      div01.onmouseup = function () {
+        draggable = false;
+      }
+
+      div01.onmousemove = function () {
+        if (draggable) {
+          this.style.left = event.clientX - offsetX + "px";
+          this.style.top = event.clientY - offsetY + "px";
+        }
+      }
+
+
+      div01.onmouseout = function () {
+        draggable = false;
+      }
+
+    }
+  </script>
+  <style>
+    #div02 {
+      position: absolute;
+      left: 200px;
+      top: 100px
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="div01" style="width:50px; height:50px;background-color:#0a0909"></div>
+
+  <div id="div02" style="width:50px; height:50px;background-color:#ff0"></div>
+
+</body>
+
+</html>

@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "images": "^3.0.2",
     "robotjs": "^0.5.1"
   }
 }
