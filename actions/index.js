@@ -2,7 +2,7 @@ const robot = require('robotjs')
 
 const 按下键位 = []
 
-xconst 按键 = function(key) {
+const 按键 = function(key) {
     robot.keyToggle(key, 'down');
     robot.keyToggle(key, 'up');
 }

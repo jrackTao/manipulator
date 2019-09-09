@@ -5,37 +5,20 @@ const screen = require('./screen')
 const { sleep } = require('./utils')
 
 const doing = async() => {
-    action.按下(constant.移动右);
-    action.按下(constant.普通攻击);
+    await randomDoing();
+    await doing();
+}
 
-    await sleep(5);
-    action.松开(constant.移动右);
-    // const img = screen.捕捉屏幕({x: 0, y: 50, w: 600, h: 600});
-    // const finds = screen.获取像素位置(img, ['0a0909', 'fffd37'], 20);
-    // console.log(finds);
-    // if(finds.length != 2) {
-    //   console.log('没找到');
-    // } else {
+const actions = ['x', 'd', 'w', 'q', 'r', 'left', 'right', 'down']
 
-    //   if(finds[1].y === finds[0].y) {
-    //     console.log('干');
-    //   } else {
-    //     if(finds[1].y > finds[0].y) {
-    //       console.log('向下走');
-    //     } else {
-    //       console.log('向上走');
-    //     }
-    //   }
-    //   // if(finds[1].x > finds[0].x) {
-    //   //   console.log('向右走');
-    //   // } else {
-    //   //   console.log('向左走')
-    //   // }
-    // }
-
-    // await sleep(.1);
-
-    // await doing();
+const randomDoing = async() => {
+    const a = actions[Math.floor(Math.random() * actions.length)]
+    console.log(a);
+    // robot.keyTap(a)
+    action.按下(a);
+    await sleep(.2);
+    action.松开(a);
+    await sleep(.2);
 }
 
 setTimeout(() => {
