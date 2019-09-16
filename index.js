@@ -6,21 +6,26 @@ const { sleep } = require('./utils')
 
 const doing = async() => {
     await randomDoing();
-    await doing();
+    // await doing();
 }
 
-const actions = ['x', 'd', 'w', 'q', 'r', 'left', 'right', 'down']
+const actions = ['x', 'd', 'w', 'q', 'r', 'left',
+    'right', 'down'
+]
 
 const randomDoing = async() => {
-    const a = actions[Math.floor(Math.random() * actions.length)]
-    console.log(a);
-    // robot.keyTap(a)
-    action.按下(a);
-    await sleep(.2);
-    action.松开(a);
-    await sleep(.2);
+    // const a = actions[Math.floor(Math.random() * actions.length)]
+    // console.log(a);
+    // action.按下(a);
+    // // robot.keyTap(a)
+    // await sleep(.2);
+
+
+    // action.松开(a);
+    // await sleep(.2);
+    robot.keyTap('right', 'alt')
 }
 
 setTimeout(() => {
     doing();
-}, 1000);
+}, 3000);
