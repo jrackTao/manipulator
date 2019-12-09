@@ -23,6 +23,12 @@ const 松开 = function(key) {
     robot.keyToggle(key, 'up');
 }
 
+const 奔跑 = function(key) {
+    robot.keyToggle(key, 'down');
+    robot.keyToggle(key, 'up');
+    robot.keyToggle(key, 'down');
+}
+
 // const 松开 = function(key) {
 //     clearInterval(按下键位[key]);
 // }
@@ -31,4 +37,5 @@ module.exports = {
     按键,
     按下,
     松开,
+    奔跑,
 }
